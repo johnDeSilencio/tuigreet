@@ -163,7 +163,7 @@ fn init_logger(greeter: &Greeter) -> Option<WorkerGuard> {
   match (greeter.debug, logfile.open(&greeter.logfile)) {
     (true, Ok(file)) => {
       let (appender, guard) = tracing_appender::non_blocking(file);
-      let target = Targets::new().with_target("tuigreet", LevelFilter::DEBUG);
+      let target = Targets::new().with_target("tuigreet", LevelFilter::INFO);
 
       tracing_subscriber::registry()
         .with(tracing_subscriber::fmt::layer().with_writer(appender).with_line_number(true))
