@@ -99,7 +99,11 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame) -> Result<(u16, u16), Box<dyn 
         );
       }
 
-      let answer_text = if greeter.working { Span::from(fl!("wait")) } else { prompt_value(theme, greeter.prompt.as_ref()) };
+      let answer_text = if greeter.working {
+        Span::from(prompt_value(theme, Some(fl!("wait"))))
+      } else {
+        prompt_value(theme, greeter.prompt.as_ref())
+      };
 
       let answer_label = Paragraph::new(answer_text);
 
