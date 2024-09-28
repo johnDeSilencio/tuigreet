@@ -141,7 +141,7 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame) -> Result<(u16, u16), Box<dyn 
       }
 
       if let Some(message) = message {
-        let message_text = Text::from(message);
+        let message_text = Text::from(prompt_value(theme, Some(message)));
         let message = Paragraph::new(message_text).alignment(Alignment::Center);
 
         f.render_widget(message, Rect::new(x, y + height, width, message_height));
