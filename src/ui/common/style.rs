@@ -43,6 +43,7 @@ impl Theme {
     let mut style = Theme::default();
 
     for (key, value) in directives {
+      eprintln!("Color::from_str({value} = {:?}", Color::from_str(value));
       if let Ok(color) = Color::from_str(value) {
         match key {
           "container" => style.container = Some((Bg, color)),
