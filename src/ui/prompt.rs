@@ -10,7 +10,7 @@ use tui::{
 use crate::{
   info::get_hostname,
   ui::{prompt_value, util::*, Frame},
-  Greeter, Mode, SecretDisplay, GreetAlign
+  GreetAlign, Greeter, Mode, SecretDisplay,
 };
 
 use super::common::style::Themed;
@@ -30,7 +30,7 @@ pub fn draw(greeter: &mut Greeter, f: &mut Frame) -> Result<(u16, u16), Box<dyn 
   let greeting_alignment = match greeter.greet_align() {
     GreetAlign::Center => Alignment::Center,
     GreetAlign::Left => Alignment::Left,
-    GreetAlign::Right => Alignment::Right
+    GreetAlign::Right => Alignment::Right,
   };
 
   let container = Rect::new(x, y, width, height);
