@@ -100,7 +100,7 @@ impl Theme {
 
     match color {
       Some((component, color)) => match component {
-        Component::Fg => style.fg(*color),
+        Component::Fg => style.fg(Color::Yellow),
         Component::Bg => style.bg(*color),
       },
 
