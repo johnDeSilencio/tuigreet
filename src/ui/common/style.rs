@@ -1,6 +1,6 @@
 use std::str::FromStr;
 
-use tracing::debug;
+use tracing::warn;
 use tui::style::{Color, Style};
 
 #[derive(Clone)]
@@ -44,7 +44,7 @@ impl Theme {
     let mut style = Theme::default();
 
     for (key, value) in directives {
-      debug!("Color::from_str({value} = {:?}", Color::from_str(value));
+      warn!("Color::from_str({value} = {:?}", Color::from_str(value));
       if let Ok(color) = Color::from_str(value) {
         match key {
           "container" => style.container = Some((Bg, color)),
